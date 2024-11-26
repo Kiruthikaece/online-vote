@@ -1,0 +1,23 @@
+<div class="container d-flex justify-content-center align-items-center h-200px w-300px">
+    <div class="card" style="padding: 12rem; margin-top: 500px;">
+      
+      <form (ngSubmit)="checkuser()" style="margin: -80px;">
+       
+        <label for="name">Aadhar number</label>
+        <input type="text" [(ngModel)]="aadharNumber" name="aadharNumber" required>
+  
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-success px-4">Login</button>
+        </div>
+       
+        <h4 class="mt-4 scroll">Is Admin <a (click)="NavigateadminLogin()">sign in</a></h4>
+
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3 w-145">
+          {{ errorMessage }}
+        </div>
+       
+      </form>
+
+    </div>
+  </div>
+  

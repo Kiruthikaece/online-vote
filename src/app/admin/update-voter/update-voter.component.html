@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-center align-items-center h-200px w-300px">
+    <div class="card" style="padding: 12rem; margin-top: 100px;">
+      <form (ngSubmit)="checkUserUpdation()" style="margin: -80px;">
+
+        <div class="form-group  mb-4">
+            <label for="name" class="font-weight-bold fs-5">Aadhar number</label>
+            <input type="text" [(ngModel)]="aadharNumber" class="form-control" name="aadharNumber" required>
+        </div>
+       
+  
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-success px-4">Login</button>
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3 w-145">
+          {{ errorMessage }}
+        </div>
+        
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,69 @@
+<div class="container mt-5">
+    <div class="card shadow w-75 mx-auto"> 
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Voter Details</h2>
+
+            <div class="row">
+               
+                <div class="col-md-6">
+                    <div class="form-group  mb-4">
+                        <label for="name" class="font-weight-bold fs-5">Name</label>
+                        <input type="text" id="name" class="form-control" [value]="voterData.fname" readonly>
+                    </div>
+                    <div class="form-group  mb-4">
+                        <label for="aadhar" class="font-weight-bold fs-5">Aadhar Number</label>
+                        <input type="text" id="aadhar" class="form-control" [value]="voterData.aadhar" readonly>
+                    </div>
+                    <div class="form-group  mb-4">
+                        <label for="phoneNo" class="font-weight-bold fs-5">Phone Number</label>
+                        <input type="text" id="phoneNo" class="form-control" [value]="voterData.phoneno" readonly>
+                    </div>
+
+                    <div class="form-group  mb-4">
+                        <label for="district" class="font-weight-bold fs-5">District</label>
+                        <input type="text" id="district" class="form-control" [value]="voterData.District" readonly>
+                    </div>
+                   
+                    <div class="form-group mb-4">
+                        <label for="party" class="font-weight-bold fs-5">Party <span class="text-danger fs-8"> Mandatory field *</span></label>
+                        <select id="party" class="form-control mt-2" [(ngModel)]="selectedPartyId" required>
+                            <option *ngFor="let party of parties" [value]="party.id">{{party.party}}</option>
+                        </select>
+                    </div>
+                    
+                    
+                      
+                </div>
+
+               
+                <div class="col-md-6">
+                    <div class="form-group  mb-4">
+                        <label for="dob" class="font-weight-bold fs-5">Date of Birth</label>
+                        <input type="date" id="dob" class="form-control" [value]="voterData.dob" readonly>
+                    </div>
+                    <div class="form-group  mb-4">
+                        <label for="gender" class="font-weight-bold fs-5">Gender</label>
+                        <input type="text" id="gender" class="form-control" [value]="voterData.gender" readonly>
+                    </div>
+
+                    <div class="form-group  mb-4">
+                        <label for="states" class="font-weight-bold fs-5">States</label>
+                        <input type="text" id="states" class="form-control" [value]="voterData.state" readonly>
+                    </div>
+
+                    <div class="form-group  mb-4">
+                        <label for="constituent" class="font-weight-bold fs-5">Constituent</label>
+                        <input type="text" id="constituent" class="form-control" [value]="voterData.constituent" readonly>
+                    </div>
+                </div>
+
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary px-4" (click)="submitVote()">Submit Vote</button>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</div>

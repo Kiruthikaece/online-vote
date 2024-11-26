@@ -1,0 +1,97 @@
+
+<div class="container mt-5">
+    <div class="card shadow w-75 mx-auto"> 
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Voter Details</h2>
+
+
+            <form [formGroup]="voterForm" (ngSubmit)="onSubmit()">
+
+                <div class="row">
+               
+                    <div class="col-md-6">
+    
+                            <div class="form-group  mb-4">
+                                <label for="fname" class="font-weight-bold fs-5">First Name</label>
+                                <span class="text-danger fs-8"> *</span>
+                                <input type="text" id="fname" formControlName="fname" class="form-control">
+                            </div>
+    
+                            <div class="form-group  mb-4">
+                                <label for="lname" class="font-weight-bold fs-5">Last Name</label>
+                                <span class="text-danger fs-8"> *</span>
+                                <input type="text" id="lname" formControlName="lname" class="form-control">
+                            </div>
+    
+                            <div class="form-group  mb-4">
+                                <label for="aadhar" class="font-weight-bold fs-5">Aadhar Number</label>
+                                <span class="text-danger fs-8"> *</span>
+                                <input type="text" id="aadhar" formControlName="aadhar" class="form-control">
+                            </div>
+                            <div class="form-group  mb-4">
+                                <label for="phoneNo" class="font-weight-bold fs-5">Phone Number</label>
+                                <span class="text-danger fs-8"> *</span>
+                                <input type="text" id="phoneNo" formControlName="phoneNo" class="form-control">
+                            </div>
+    
+                                
+                    </div>
+                        <div class="col-md-6">
+    
+                           
+    
+                            <div class="form-group  mb-4">
+                                <label for="dob" class="font-weight-bold fs-5">Date of Birth</label>
+                                <span class="text-danger fs-8"> *</span>
+                                <input type="date" id="dob" formControlName="dob" class="form-control">
+                            </div>
+                            <div class="form-group  mb-4">
+                                <label for="gender" class="font-weight-bold fs-5">Gender</label>
+                                <span class="text-danger fs-8"> *</span>
+                                <select formControlName="gender" id="gender" class="form-control">
+                                <option *ngFor="let gender of genderList" [value]="gender">{{gender}}</option>
+                                </select>
+                            </div>
+        
+                            <div class="form-group  mb-4">
+                                <label for="states" class="font-weight-bold fs-5">States</label>
+                                <span class="text-danger fs-8"> *</span>
+                                <select formControlName="state_id" id="state_id" class="form-control" [(ngModel)]="selectedStateId" (change)="onStateChange()">
+                                    <option *ngFor="let state of states" [value]="state.id">{{state.name}}</option>
+                                </select>
+                            </div>
+        
+                            <div class="form-group  mb-4">
+                                <label for="ditricts" class="font-weight-bold fs-5">Districts</label>
+                                <span class="text-danger fs-8"> *</span>
+                                <select formControlName="district_id" id="district_id" class="form-control" [(ngModel)]="selectedDistrictId" (change)="onDistrictChange()">
+                                    <option *ngFor="let district of districts" [value]="district.id">{{district.districtName}}</option>
+                                </select>
+                            </div>
+        
+
+                            <div class="form-group  mb-4">
+                                <label for="constituent" class="font-weight-bold fs-5">Constituent</label>
+                                <span class="text-danger fs-8"> *</span>
+                                <select formControlName="constituent_id" id="constituent_id" class="form-control" >
+                                    <option *ngFor="let constituent of constituents" [value]="constituent.id">{{constituent.constituentName}}</option>
+                                </select>
+                            </div>
+                        </div> 
+                 
+    
+                   
+    
+    
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary px-4" [disabled]="voterForm.invalid">Submit Vote</button>
+                    </div>
+                    
+                </div>
+            </form>
+            
+
+        </div>
+    </div>
+</div>
+

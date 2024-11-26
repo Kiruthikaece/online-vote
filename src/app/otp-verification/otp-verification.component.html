@@ -1,0 +1,25 @@
+
+<div class="container d-flex justify-content-center align-items-center h-200px w-300px">
+    <div class="card" style="padding: 8rem; margin-top: 100px;">
+           
+           <div class="form-group  mb-4">
+                <label  class="font-weight-bold fs-5">Phone Number</label>
+                <input class="form-control" type="number" name="phoneNo" id="phoneNo" [value]="voter.phoneno" readonly>
+           </div>
+
+           <div class="form-group  mb-4">
+                <label  class="font-weight-bold fs-5" >OTP</label>
+                <input class="form-control" type="number" name="otp" id="otp" [(ngModel)]="otp" required>
+           </div>
+
+           <div *ngIf="errorMessage" class="text-danger text-center mb-3">
+                {{ errorMessage }}
+           </div>
+
+           <div class="text-center mt-4">
+                <button class="btn btn-primary px-4" (click)="navigateToVoter()">verify Otp</button>
+           </div>
+
+    </div>
+  </div>
+  
