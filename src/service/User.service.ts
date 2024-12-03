@@ -8,7 +8,7 @@ import { User } from '../model/User.model';
 })
 export class UserService {
 
-  private apiUserUrl="http://localhost:8080/api";
+  private apiUserUrl="https://pacific-adaptation-production.up.railway.app/api";
 
 
   constructor(private httpClient:HttpClient) { }

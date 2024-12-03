@@ -8,7 +8,7 @@ import { Voter } from 'src/model/Voter.model';
 })
 export class VoterService {
 
-  private  baseUrl="http://localhost:8080/api";
+  private  baseUrl="https://pacific-adaptation-production.up.railway.app/api";
   
   constructor(private httpClient:HttpClient) { }
 

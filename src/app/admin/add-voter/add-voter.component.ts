@@ -51,9 +51,17 @@ export class AddVoterComponent implements OnInit{
           }
         },
         (error: any) => {
-          console.error(error);
-          alert('An error occurred while registering the voter.');
+          if (error.status === 409) {
+            alert('Error: ' + error.error.message); 
+          } 
+          else if(error.status ==400) {
+            alert('Error: ' + error.error.message); 
+          }
+          else {
+            console.error(error);
+            alert('An unexpected error occurred: ' + error.message);
         }
+      }
       );
     }
   }
