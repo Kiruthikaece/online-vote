@@ -1,23 +1,52 @@
-<div class="container d-flex justify-content-center align-items-center h-200px w-300px">
-    <div class="card" style="padding: 12rem; margin-top: 500px;">
-      
-      <form (ngSubmit)="checkuser()" style="margin: -80px;">
-       
-        <label for="name">Aadhar number</label>
-        <input type="text" [(ngModel)]="aadharNumber" name="aadharNumber" required>
+
+ 
+
+   <div class="container mt-15">
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card h-100 border-0 shadow">
+          <div class="card-header text-white bg-success d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Add New Voter</h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Fill Form if you are 18 years or above or you will turn 18 in few months</h6>
+          </div>
+          <div class="card-footer bg-white border-0 text-center">
+            <button class="btn btn-warning w-100" routerLink="/admin/add-voter">Add voter</button>
+          </div>
+        </div>
+      </div>
   
-        <div class="text-center mt-4">
-          <button type="submit" class="btn btn-success px-4">Login</button>
+      <!-- Card 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card h-100 border-0 shadow">
+          <div class="card-header text-white bg-primary d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Update Deatils</h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">If you need to change or correct your details, click the 'Update Voter' button to update your information.</h6>
+          </div>
+          <div class="card-footer bg-white border-0 text-center">
+            <button class="btn btn-warning w-100" routerLink="/admin/update-voter">Update Voter</button>
+          </div>
         </div>
-       
-        <h4 class="mt-4 scroll">Is Admin <a (click)="NavigateadminLogin()">sign in</a></h4>
-
-        <div *ngIf="errorMessage" class="alert alert-danger mt-3 w-145">
-          {{ errorMessage }}
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card h-100 border-0 shadow">
+          <div class="card-header text-white bg-secondary d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Online voting Poll</h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">If you are eligible to vote, you can cast your vote only once. Please ensure you make your choice carefully before submitting.</h6>
+          </div>
+          <div class="card-footer bg-white border-0 text-center">
+            <button class="btn btn-warning w-100" routerLink="/pick-vote">Pick Vote</button>
+          </div>
         </div>
-       
-      </form>
-
+      </div>
     </div>
   </div>
-  

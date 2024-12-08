@@ -10,11 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { OtpVerificationComponent } from './otp-verification/otp-verification.component';
 import { VoterComponent } from './voter/voter.component';
 import { SuccessVoteComponent } from './success-vote/success-vote.component';
-import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
-import { MainMenuComponent } from './admin/main-menu/main-menu.component';
 import { AddVoterComponent } from './admin/add-voter/add-voter.component';
 import { UpdateVoterComponent } from './admin/update-voter/update-voter.component';
 import { FormUpdationComponent } from './admin/update-voter/form-updation/form-updation.component';
+import { PickVoteComponent } from './pick-vote/pick-vote.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -24,11 +24,11 @@ import { FormUpdationComponent } from './admin/update-voter/form-updation/form-u
     OtpVerificationComponent,
     VoterComponent,
     SuccessVoteComponent,
-    AdminLoginComponent,
-    MainMenuComponent,
     AddVoterComponent,
     UpdateVoterComponent,
     FormUpdationComponent,
+    PickVoteComponent,
+    HeaderComponent,
     
   ],
   imports: [

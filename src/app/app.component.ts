@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 
 @Component({
@@ -10,4 +11,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'E-vote';
+  showHeader: boolean = true;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const hiddenHeaderRoutes = ['/vote', '/success'];
+        this.showHeader = !hiddenHeaderRoutes.includes(event.url);
+      }
+    });
+  }
 }

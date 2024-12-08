@@ -10,6 +10,7 @@ export class UserService {
 
   private apiUserUrl="https://pacific-adaptation-production.up.railway.app/api";
 
+ //private  apiUserUrl="http://localhost:8080/api";
 
   constructor(private httpClient:HttpClient) { }
 
